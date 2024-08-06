@@ -236,11 +236,11 @@ Id,Domanda,PercorsoFormativo,Origine,RispostaCorretta,Risposta0,Risposta1,Rispos
 235,La diffamazione in quale comma è prevista?,LEG,GitHub,Risposta0,2° comma articolo 595,1° comma articolo 595,3° comma articolo 595,2° comma articolo 596
 236,Un blog è :,SOC,GitHub,Risposta0,Un sito internet generalmente gestito da una persona che pubblica periodicamente i propri pensieri,Un tipo di software per la gestione di database,Un social network specializzato per professionisti,Un servizio di posta elettronica avanzato
 237,Quali sono le diverse forme di comunicazione in internet?,SOC,GitHub,Risposta0,"Blog, social-network, piattaforme di microblogging, forum e messageboard","Podcast, e-commerce, chat room, streaming video","Email, giochi online, download di software, e-learning","Newsgroup, messaggistica istantanea, browser, motori di ricerca"
-238,Quale articolo prevede il reato di ingiuria?,LEG,GitHub,Risposta0,594,495,954,945
-239,Diritto di necessità del trattamento dei dati si ritrova nell’articolo:,LEG,GitHub,Risposta0,3,2,14,4
-240,Qale articolo prevede l’obbligo di informativa?,LEG,GitHub,Risposta0,13,594,34,34-35
+238,Quale articolo prevede il reato di ingiuria?,LEG,GitHub,Risposta0,"594","495","954","945"
+239,Diritto di necessità del trattamento dei dati si ritrova nell’articolo:,LEG,GitHub,Risposta0,"3","2","14","4"
+240,Qale articolo prevede l’obbligo di informativa?,LEG,GitHub,Risposta0,"13","594","34","34-35"
 241,Quali articoli riguardano le misure minime di sicurezza informatica?,LEG,GitHub,Risposta0,"3,435","4,334","3,536","3,4"
-242,Il concetto di buon costume si ritrova nell’articolo:,LEG,GitHub,Risposta0,21,12,23,31
+242,Il concetto di buon costume si ritrova nell’articolo:,LEG,GitHub,Risposta0,"21","12","23","31"
 243,Quali possono essere credenziali per l’autenticazione?,SOC,GitHub,Risposta0,Tutte e tre,Id e password,Dispositivo per l’autenticazione,Dati biometrici
 244,Quali sono le tecniche per bloccare l’accesso a siti?,SOC,GitHub,Risposta0,"Ip blocking, dns tampering, proxy",Firewall,Antivirus,Criptografia
 245,Quando si delinea il concetto di società dell’informazione?,SOC,GitHub,Risposta0,Tra gli anni 60 e 70,Nel XIX secolo,Negli anni '80,Nel XV secolo
@@ -251,7 +251,7 @@ Id,Domanda,PercorsoFormativo,Origine,RispostaCorretta,Risposta0,Risposta1,Rispos
 250,Di quali parti è composto l’articolo 30/06/2003 196?,LEG,GitHub,Risposta0,"Parte1: disposizioni generali, parte2: specifiche tipologie di trattamento, parte3: tutela dell’interessato","Parte1: diritti fondamentali, parte2: regolamentazione delle sanzioni, parte3: obblighi degli operatori","Parte1: principi generali, parte2: diritti dell'interessato, parte3: responsabilità del titolare del trattamento","Parte1: norme procedurali, parte2: disposizioni transitorie, parte3: esenzioni"
 251,Cosa stabilisce il principio di pertinenza e non eccedenza?,LEG,GitHub,Risposta0,Sono considerate legittime le sole operazioni di trattamento effettivamente necessarie alle finalità perseguite,Sono considerate legittime le operazioni di trattamento che eccedono le finalità perseguite,Sono considerate legittime le operazioni di trattamento non pertinenti alle finalità perseguite,"Il principio non esiste, è un'invenzione"
 252,Quali opportunità si aprono nell’era post Turing?,SOC,GitHub,Risposta0,"E-accessibility, socio-cultural e-inclusion, geopolitical e-inclusion, aging, e-competences, inclusive e-government",Intelligenza artificiale generale,Esplorazione spaziale avanzata,Teletrasporto
-253,A che anno risalgono i primi 4 nodi dell’internet?,SOC,GitHub,Risposta0,1969,1696,1999,1996
+253,A che anno risalgono i primi 4 nodi dell’internet?,SOC,GitHub,Risposta0,"1969","1696","1999","1996"
 254,"Secondo Moor, qual è uno dei segni dei problemi fondamentali all'interno della Computer Ethics?",ETH,GitHub,Risposta1,Trasformazioni delle attività umane,Vuoti normativi e concettuali,Evoluzione tecnologica,Competenze tecnico-scientifiche
 255,"Secondo Maner, qual è uno dei motivi per cui la Computer Ethics è necessaria?",ETH,GitHub,Risposta1,Per diventare professionisti responsabili,Per evitare l'abuso dei computer,Per espandere la filosofia alla modernità,Per creare un campo di studi indipendente
 256,"Secondo Maner, qual è una peculiarità dei computer?",ETH,GitHub,Risposta1,Memorizzazione infinita delle informazioni,Universali in termini di adattabilità,Assenza di bachi nel software,Controllo diretto sulle transazioni finanziarie
@@ -269,8 +269,8 @@ Id,Domanda,PercorsoFormativo,Origine,RispostaCorretta,Risposta0,Risposta1,Rispos
 268,I documenti non-proprietary format sono a livello di disponibilità dei dati:,SOC,GitHub,Risposta1,1 stella, 3 stelle, 4 stelle, 5 stelle
 269,I documenti RDF standard sono a livello di disponibilità dei dati:,SOC,GitHub,Risposta2, 1 stella, 3 stelle, 4 stelle, 5 stelle
 270,I documenti linked data sono a livello di disponibilità dei dati:,SOC,GitHub,Risposta3, 1 stella, 3 stelle, 4 stelle, 5 stelle
-271,In che anno il filosofo Hans Jonas intravede nuove responsabilità per l'umanità di fronte alle future generazioni?,ETH,GitHub,Risposta0,1979,1987,1978,1997
-272,"In che anno viene utilizzato per la volta il termine ""computer Ethics""?",ETH,GitHub,Risposta0,1978,1987,1979,1997
+271,In che anno il filosofo Hans Jonas intravede nuove responsabilità per l'umanità di fronte alle future generazioni?,ETH,GitHub,Risposta0,"1979","1987","1978","1997"
+272,"In che anno viene utilizzato per la volta il termine ""computer Ethics""?",ETH,GitHub,Risposta0,"1978","1987","1979","1997"
 273,Da chi furono introdotte le 3 leggi morali della società dell'informazione?,ETH,GitHub,Risposta0,1976 Joseph Weizenbaum,1978 Walter Maner,1976 Richard Stallman,1978 Hans Jonas
 274,Cosa dice la prima legge morale della Società Dell Informazione?,ETH,GitHub,Risposta0,"le funzioni umane che richiedono giudizio, rispetto, comprensione, cura ed amore non dovrebbero essere sostituite da computer","Le funzioni umane che richiedono giudizio, rispetto, comprensione, cura ed amore dovrebbero essere sostituite da computer",La prima legge morale della Società Dell'Informazione non si preoccupa delle funzioni umane che richiedono giudizio,La prima legge morale della Società Dell'Informazione promuove l'automazione completa delle funzioni umane che richiedono giudizio
 275,Cosa dice la terza legge morale della Società dell'informazione?,ETH,GitHub,Risposta0,l'informatica è una questione di scelte e responsabilità umane,L'accesso libero e senza restrizioni a Internet è un diritto fondamentale per tutti,"Tutti i dati personali devono essere pubblicamente disponibili""",L'intelligenza artificiale deve essere l'unica guida per le decisioni etiche

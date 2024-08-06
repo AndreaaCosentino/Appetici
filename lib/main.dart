@@ -102,27 +102,29 @@ class _TestPage extends State<TestPage>{
     int randomNumber = random.nextInt(296)+1;
     print(randomNumber);
     String question;
+    String correctAnswer;
     List<String> answers = [];
 
     if(values[randomNumber][1] is int)
       question = "$values[randomNumber][1]";
     else question = values[randomNumber][1];
 
-    if(values[randomNumber][5] is int)
-      answers.add("$values[randomNumber][5]");
-    else answers.add(values[randomNumber][5]);
+    int questionOrder = random.nextInt(4);
+    for(int i = 0; i < 4; i++){
+      int j = (i+questionOrder)%4 + 5;
+      if(values[randomNumber][j] is int)
+        answers.add("$values[randomNumber][$j]");
+      else answers.add(values[randomNumber][j]);
+    }
+    int numb = int.parse((values[randomNumber][4] as String)[8]);
+    correctAnswer = answers[(numb + (4-questionOrder))%4];
 
-    if(values[randomNumber][6] is int)
-      answers.add("$values[randomNumber][6]");
-    else answers.add(values[randomNumber][6]);
-
-    if(values[randomNumber][7] is int)
-      answers.add("$values[randomNumber][7]");
-    else answers.add(values[randomNumber][7]);
-
-    if(values[randomNumber][8] is int)
-      answers.add("$values[randomNumber][8]");
-    else answers.add(values[randomNumber][8]);
+    aggiornaStato(){
+      setState(() {
+        questionOrder = random.nextInt(4);
+        randomNumber = random.nextInt(296)+1;
+      });
+    }
 
     return Scaffold(
       body: Center(
@@ -130,38 +132,10 @@ class _TestPage extends State<TestPage>{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(question),
-            ElevatedButton(
-              child: Text(answers[0]),
-              onPressed: () {
-                setState(() {
-                  randomNumber = random.nextInt(296)+1;
-                });
-              },
-            ),
-            ElevatedButton(
-              child: Text(answers[1]),
-              onPressed: () {
-                setState(() {
-                  randomNumber = random.nextInt(296)+1;
-                });
-              },
-            ),
-            ElevatedButton(
-              child: Text(answers[2]),
-              onPressed: () {
-                setState(() {
-                  randomNumber = random.nextInt(296)+1;
-                });
-              },
-            ),
-            ElevatedButton(
-              child: Text(answers[3]),
-              onPressed: () {
-                setState(() {
-                  randomNumber = random.nextInt(296)+1;
-                });
-              },
-            ),
+            buildRisposta(answers[0],callback: aggiornaStato,correctAnswer),
+            buildRisposta(answers[1],callback: aggiornaStato,correctAnswer),
+            buildRisposta(answers[2],callback: aggiornaStato,correctAnswer),
+            buildRisposta(answers[3],callback: aggiornaStato,correctAnswer),
           ],
         ),
       ),
@@ -177,6 +151,29 @@ class _TestPage extends State<TestPage>{
         ],
       ),
     );
+  }
+
+  ElevatedButton buildRisposta(String answer,String correctAnswer, {required Null Function() callback}) {
+    return ElevatedButton(
+            child: Text(answer),
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.resolveWith<Color>(
+                (Set<WidgetState> states) {
+                   if (states.contains(WidgetState.pressed)) {
+                     if(answer == correctAnswer) {
+                       return Colors.green;
+                     } else {
+                       return Colors.red;
+                     }
+                }
+             return Colors.white;
+           },
+        ),
+      ),
+             onPressed: () {
+              callback();
+            },
+          );
   }
 }
 

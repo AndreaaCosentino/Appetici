@@ -1,7 +1,5 @@
+import 'package:appetici/func.dart';
 import 'package:flutter/material.dart';
-import 'package:csv/csv.dart';
-import 'package:flutter/services.dart';
-import 'dart:math';
 import 'TestPage.dart';
 
 
@@ -10,6 +8,7 @@ class HomePage extends StatefulWidget{
   State<StatefulWidget> createState() => _HomePageState();
 
 }
+
 
 
 class _HomePageState extends State<HomePage>{
@@ -34,28 +33,62 @@ class _HomePageState extends State<HomePage>{
   }
 }
 
-
-class LogInPage extends StatelessWidget {
-  final Function callback;
-  LogInPage({
+class LogInPage extends StatefulWidget {
+  const LogInPage({
     super.key,
     required this.callback
   });
+  final Function callback;
+  @override
+  State<StatefulWidget> createState() => _LogInPage(callback: callback);
+
+}
+
+class _LogInPage extends State<LogInPage> {
+  final Function callback;
+  _LogInPage({
+    required this.callback
+  });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          child: Text("INIZIA"),
-          onPressed: () {
-            callback(1);
-          },
+      appBar: AppBar(
+        backgroundColor: Colors.indigo,
+        title: Padding(
+          padding: const EdgeInsets.fromLTRB(0,0,0,0),
+          child: Center(child: Text("APPETICI", style: TextStyle(
+              color: Colors.white))
+          ),
         ),
       ),
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
         children: [
-          Text("Appetici"),
+          SizedBox(height: 200),
+          Center(
+            child: ElevatedButton(
+              child: Text("INIZIA"),
+              onPressed: () {
+                callback(1);
+              },
+            ),
+          ),
+          Slider(
+            min: 1,
+            max: 100.0,
+            divisions: 100,
+            value: N_DOMANDE.toDouble(),
+            label: "${N_DOMANDE.round()}",
+            onChanged: (value) {
+              setState(() {
+                N_DOMANDE = value.toInt();
+              });
+            },
+          ),
+          Text(
+            'Numero domande: $N_DOMANDE',
+            style: TextStyle(color: Colors.indigo),
+          ),
         ],
       ),
     );

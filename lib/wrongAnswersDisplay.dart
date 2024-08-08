@@ -125,12 +125,12 @@ class ToDIsplay extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(300, 90),
+                    fixedSize: const Size(300, 100),
                     backgroundColor: Colors.indigo,
                     shape: const BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0)))),
                 child:  Text(domandaSbagliata,style: TextStyle(color: Colors.white)),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 40),
               Risposta(Risposte: Risposte,mioIndice: 0,indiceErrata: Indice),
               SizedBox(height: 20),
               Risposta(Risposte: Risposte,mioIndice: 1,indiceErrata: Indice),
@@ -176,7 +176,7 @@ class Risposta extends StatelessWidget {
     return ElevatedButton(
         style: ButtonStyle(
           shape:  WidgetStateProperty.all(BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0)))),
-          fixedSize: WidgetStateProperty.all(Size(300, 80)),
+          maximumSize: WidgetStateProperty.all(Size(350, 140)),
           backgroundColor: WidgetStateProperty.resolveWith<Color>(
                 (Set<WidgetState> states) {
                 if(mioIndice == indiceErrata) {

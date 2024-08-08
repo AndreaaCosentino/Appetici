@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'dart:math';
 
-const int N_DOMANDE = 16;
+int N_DOMANDE = 16;
 
 Future<String> loadAsset() async{
   var path = 'assets/domandeAspetti.csv';

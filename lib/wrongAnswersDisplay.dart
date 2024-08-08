@@ -53,9 +53,13 @@ class _wrongAnswersDisplay extends State<wrongAnswersDisplay>{
        );
      }
 
-    setNewPage(){
+    setNewPage(bool avanti){
       setState(() {
-        i = (i+1)%lista.length;
+        if(avanti) {
+          i = (i + 1) % lista.length;
+        }else{
+          i = (i - 1) % lista.length;
+        }
       });
     };
     List<List<dynamic>> values = const CsvToListConverter().convert(domanda);
@@ -95,25 +99,57 @@ class ToDIsplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.indigo,
+          title: Padding(
+            padding: const EdgeInsets.fromLTRB(35,0,0,0),
+            child: Center(child: Text(StringaSotto, style: TextStyle(
+             color: Colors.white))
+            ),
+          ),
+          actions: [
+            IconButton(
+            //padding: const EdgeInsets.fromLTRB(0,0,10,0),
+            icon: Icon(Icons.home, color: Colors.white),
+              onPressed: () {
+                callback(0);
+              },
+            )
+      ],
+
+      ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(domandaSbagliata),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(300, 90),
+                    backgroundColor: Colors.indigo,
+                    shape: const BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0)))),
+                child:  Text(domandaSbagliata,style: TextStyle(color: Colors.white)),
+              ),
+              SizedBox(height: 50),
               Risposta(Risposte: Risposte,mioIndice: 0,indiceErrata: Indice),
+              SizedBox(height: 20),
               Risposta(Risposte: Risposte,mioIndice: 1,indiceErrata: Indice),
+              SizedBox(height: 20),
               Risposta(Risposte: Risposte,mioIndice: 2,indiceErrata: Indice),
+              SizedBox(height: 20),
               Risposta(Risposte: Risposte,mioIndice: 3,indiceErrata: Indice),
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(30,20,0,0),
-                    child: Text(StringaSotto),
+                    padding: const EdgeInsets.fromLTRB(40,20,0,0),
+                    child: ElevatedButton(onPressed: (){
+                      CambiaPagina(false);
+                    }, child: Text("INDIETRO")),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(100,20,0,0),
+                    padding: const EdgeInsets.fromLTRB(110,20,0,0),
                     child: ElevatedButton(onPressed: (){
-                      CambiaPagina();
+                      CambiaPagina(true);
                       }, child: Text("AVANTI")),
                   ),
                 ],
@@ -121,18 +157,6 @@ class ToDIsplay extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-
-      children: [
-        ElevatedButton(
-          child: Text("INDIETRO"),
-          onPressed: () {
-            callback(0);
-          },
-        ),
-      ],
-    )
     );
   }
 }
@@ -151,6 +175,8 @@ class Risposta extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ButtonStyle(
+          shape:  WidgetStateProperty.all(BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0)))),
+          fixedSize: WidgetStateProperty.all(Size(300, 80)),
           backgroundColor: WidgetStateProperty.resolveWith<Color>(
                 (Set<WidgetState> states) {
                 if(mioIndice == indiceErrata) {

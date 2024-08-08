@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'home.dart';
 import 'func.dart';
 
@@ -6,6 +7,9 @@ String domanda = "test";
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   Future<String> data = loadAsset();
   domanda = await data;
   runApp(const MyApp());

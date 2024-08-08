@@ -74,32 +74,46 @@ class _TestPage extends State<TestPage> {
     }
 
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.indigo,
+          title: Padding(
+            padding: const EdgeInsets.fromLTRB(35,0,0,0),
+            child: Center(child: Text(domandeMancanti, style: TextStyle(
+                color: Colors.white))
+            ),
+          ),
+          actions: [
+            IconButton(
+              //padding: const EdgeInsets.fromLTRB(0,0,10,0),
+              icon: Icon(Icons.home, color: Colors.white),
+              onPressed: () {
+                callback(0);
+              },
+            )
+          ],
+        ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(domandeMancanti),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(300, 90),
+                  backgroundColor: Colors.indigo,
+                  shape: const BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0)))),
+              child:  Text(question,style: TextStyle(color: Colors.white)),
             ),
-            Text(question),
+            SizedBox(height: 50),
             buildRisposta(answers[0], callback: aggiornaStato, correctAnswer),
+            SizedBox(height: 20),
             buildRisposta(answers[1], callback: aggiornaStato, correctAnswer),
+            SizedBox(height: 20),
             buildRisposta(answers[2], callback: aggiornaStato, correctAnswer),
+            SizedBox(height: 20),
             buildRisposta(answers[3], callback: aggiornaStato, correctAnswer),
           ],
         ),
-      ),
-      bottomNavigationBar: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            child: Text("INDIETRO"),
-            onPressed: () {
-              callback(0);
-            },
-          ),
-        ],
       ),
     );
   }
@@ -109,6 +123,8 @@ ElevatedButton buildRisposta(String answer,String correctAnswer, {required Null 
   return ElevatedButton(
     child: Text(answer),
     style: ButtonStyle(
+      shape:  WidgetStateProperty.all(BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(0)))),
+      fixedSize: WidgetStateProperty.all(Size(300, 80)),
       backgroundColor: WidgetStateProperty.resolveWith<Color>(
             (Set<WidgetState> states) {
           if (states.contains(WidgetState.pressed)) {

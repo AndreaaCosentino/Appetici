@@ -11,11 +11,12 @@ class TestPage extends StatefulWidget {
 
   TestPage({
     super.key,
-    required this.callback
+    required this.callback, required this.domande, required this.n_domande
   });
-  int n_domande = N_DOMANDE;
+  int  n_domande;
+  List<int>  domande;
   @override
-  State<TestPage> createState() => _TestPage(callback: callback, numero: n_domande,domande: creaDomande(n_domande));
+  State<TestPage> createState() => _TestPage(callback: callback, numero: n_domande,domande: domande);
 }
 
 class _TestPage extends State<TestPage> {
@@ -51,6 +52,7 @@ class _TestPage extends State<TestPage> {
     int questionOrder = random.nextInt(4);
     for (int i = 0; i < 4; i++) {
       int j = (i + questionOrder) % 4 + 5;
+      print(id);
       if (values[currentQuestion][j] is int)
         answers.add("$values[$id][$j]");
       else

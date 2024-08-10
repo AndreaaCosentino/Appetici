@@ -1,3 +1,4 @@
+import 'package:csv/csv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'home.dart';
@@ -12,6 +13,7 @@ Future<void> main() async {
   ]);
   Future<String> data = loadAsset();
   domanda = await data;
+
   runApp(const MyApp());
 }
 

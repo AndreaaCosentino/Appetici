@@ -131,13 +131,13 @@ class ToDIsplay extends StatelessWidget {
                 child:  Text(domandaSbagliata,style: TextStyle(color: Colors.white)),
               ),
               SizedBox(height: 40),
-              Risposta(Risposte: Risposte,mioIndice: 0,indiceErrata: Indice),
+              Risposta(Risposte: Risposte,mioIndice: 0,indiceGiusta: Indice),
               SizedBox(height: 20),
-              Risposta(Risposte: Risposte,mioIndice: 1,indiceErrata: Indice),
+              Risposta(Risposte: Risposte,mioIndice: 1,indiceGiusta: Indice),
               SizedBox(height: 20),
-              Risposta(Risposte: Risposte,mioIndice: 2,indiceErrata: Indice),
+              Risposta(Risposte: Risposte,mioIndice: 2,indiceGiusta: Indice),
               SizedBox(height: 20),
-              Risposta(Risposte: Risposte,mioIndice: 3,indiceErrata: Indice),
+              Risposta(Risposte: Risposte,mioIndice: 3,indiceGiusta: Indice),
               Row(
                 children: [
                   Padding(
@@ -164,12 +164,12 @@ class ToDIsplay extends StatelessWidget {
 class Risposta extends StatelessWidget {
   const Risposta({
     super.key,
-    required this.Risposte, required int this.mioIndice, required int this.indiceErrata,
+    required this.Risposte, required int this.mioIndice, required int this.indiceGiusta,
   });
 
   final List<String> Risposte;
   final int mioIndice;
-  final int indiceErrata;
+  final int indiceGiusta;
 
   @override
   Widget build(BuildContext context) {
@@ -179,7 +179,7 @@ class Risposta extends StatelessWidget {
           maximumSize: WidgetStateProperty.all(Size(350, 140)),
           backgroundColor: WidgetStateProperty.resolveWith<Color>(
                 (Set<WidgetState> states) {
-                if(mioIndice == indiceErrata) {
+                if(mioIndice == indiceGiusta) {
                   return Colors.green;
                 }else{
                   return Colors.white;
